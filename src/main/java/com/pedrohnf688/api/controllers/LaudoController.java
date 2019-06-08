@@ -42,8 +42,13 @@ public class LaudoController {
 	private LaudoRepositorio laudoRepositorio;
 
 	@GetMapping
-	public String a() {
+	public String login() {
 		return "login.html";
+	}
+
+	@GetMapping(value = "listarUsuarios")
+	public String paginalistarUsuarios() {
+		return "listarUsuarios.html";
 	}
 
 	
