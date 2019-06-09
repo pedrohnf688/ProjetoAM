@@ -302,40 +302,36 @@
 	</nav>
 
 
+	<form action="/upload" method="post" enctype="multipart/form-data">
+		<input type="file" name="files" multiple> <input type="submit"
+			value="Upload Files"></input>
 
-	<div class="container">
 
-		<div class="listWrap">
+		<div class="container">
 
-			<ul class="list">
+			<div class="listWrap">
 
-				<li>
-				   <span>ID</span>
-				   <span>Nome</span> 
-				   <span>Email</span> 				   
-					<span>Actions</span> 
-		
-				</li>
-				<li  th:each="pessoa : ${pessoas}">
-				   <span th:text="${pessoa.id}"></span>
-				    <span th:text="${pessoa.nome}"></span>
-				     <span th:text="${pessoa.email}"></span>
-					 <span>
-						<div class="btn-group btn-group-xs" role="group" aria-label="...">
-							<button type="button" class="btn btn-default">Edit</button>
-							<button type="button" class="btn btn-default" disabled>Delete</button>
-						</div>
-				</span> </li>
-				<li></li>
-			</ul>
+				<ul class="list">
+
+					<li><span>ID</span> <span>Nome</span> <span>Email</span> <span>Actions</span>
+					</li>
+					<li th:each="pessoa : ${pessoas}"><span th:text="${pessoa.id}"></span>
+						<span th:text="${pessoa.nome}"></span> <span
+						th:text="${pessoa.email}"></span> <span>
+							<div class="btn-group btn-group-xs" role="group" aria-label="...">
+								<button type="button" class="btn btn-default">Edit</button>
+								<button type="button" class="btn btn-default" disabled>Delete</button>
+							</div>
+					</span></li>
+					<li></li>
+				</ul>
+
+			</div>
 
 		</div>
 
-	</div>
-
-	<script src="http://code.jquery.com/color/jquery.color-2.1.2.min.js"
-		integrity="sha256-H28SdxWrZ387Ldn0qogCzFiUDDxfPiNIyJX7BECQkDE="
-		crossorigin="anonymous"></script>
-
+		<script src="http://code.jquery.com/color/jquery.color-2.1.2.min.js"
+			integrity="sha256-H28SdxWrZ387Ldn0qogCzFiUDDxfPiNIyJX7BECQkDE="
+			crossorigin="anonymous"></script>
 </body>
 </html>

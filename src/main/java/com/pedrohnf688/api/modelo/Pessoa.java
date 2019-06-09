@@ -1,6 +1,8 @@
 package com.pedrohnf688.api.modelo;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -10,12 +12,20 @@ public class Pessoa {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
 	private String nome;
 	private String email;
 	private String senha;
-	private EnumPerfil perfil;
 
 	public Pessoa() {
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getNome() {
@@ -42,12 +52,9 @@ public class Pessoa {
 		this.senha = senha;
 	}
 
-	public EnumPerfil getPerfil() {
-		return perfil;
-	}
-
-	public void setPerfil(EnumPerfil perfil) {
-		this.perfil = perfil;
+	@Override
+	public String toString() {
+		return "Pessoa [id=" + id + ", nome=" + nome + ", email=" + email + ", senha=" + senha + "]";
 	}
 
 }

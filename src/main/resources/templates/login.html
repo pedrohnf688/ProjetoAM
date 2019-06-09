@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
-
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="UTF-8">
+	<meta charset="UTF-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width" />
 <title>Projeto de AM</title>
 
 <link
@@ -150,8 +151,8 @@ body {
 
 <body>
 	<header class="nav-down">
-		<div class="top-line"> </div>
-		<div class="navigation"> </div>
+		<div class="top-line"></div>
+		<div class="navigation"></div>
 	</header>
 
 	<div class="container">
@@ -172,14 +173,14 @@ body {
 					<div class="panel-body">
 						<div class="row">
 							<div class="col-lg-12">
-								<form id="login-form" action="#" method="post" role="form"
+								<form id="login-form" action="/login" method="post" role="form"
 									style="display: block;">
 									<div class="form-group">
-										<input type="text" name="username" id="username" tabindex="1"
+										<input type="email" name="email" id="email" tabindex="1"
 											class="form-control" placeholder="Nome do Usuário" value="">
 									</div>
 									<div class="form-group">
-										<input type="password" name="password" id="password"
+										<input type="password" name="senha" id="senha"
 											tabindex="2" class="form-control" placeholder="Senha">
 									</div>
 									<div class="form-group">
@@ -193,10 +194,10 @@ body {
 									</div>
 
 								</form>
-								<form id="register-form" action="#" method="post" role="form"
+								<form id="register-form" method="post" role="form"
 									style="display: none;">
 									<div class="form-group">
-										<input type="text" name="username" id="username" tabindex="1"
+										<input type="text" name="nome" id="nome" tabindex="1"
 											class="form-control" placeholder="Nome do Usuário" value="">
 									</div>
 									<div class="form-group">
@@ -204,13 +205,8 @@ body {
 											class="form-control" placeholder="Email" value="">
 									</div>
 									<div class="form-group">
-										<input type="password" name="password" id="password"
+										<input type="password" name="senha" id="senha"
 											tabindex="2" class="form-control" placeholder="Senha">
-									</div>
-									<div class="form-group">
-										<input type="password" name="confirm-password"
-											id="confirm-password" tabindex="2" class="form-control"
-											placeholder="Confirmar Senha">
 									</div>
 									<div class="form-group">
 										<div class="row">

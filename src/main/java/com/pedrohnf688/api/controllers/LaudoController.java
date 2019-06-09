@@ -30,7 +30,7 @@ import com.pedrohnf688.api.service.LaudoService;
 import com.pedrohnf688.api.utils.CsvUtils;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/laudo")
 public class LaudoController {
 
 	private static final Logger log = LoggerFactory.getLogger(LaudoController.class);
@@ -42,15 +42,11 @@ public class LaudoController {
 	private LaudoRepositorio laudoRepositorio;
 
 	@GetMapping
-	public String login() {
-		return "login.html";
+	public String paginaLaudo() {
+	return "uploadLaudos";
 	}
 
-	@GetMapping(value = "listarUsuarios")
-	public String paginalistarUsuarios() {
-		return "listarUsuarios.html";
-	}
-
+	
 	
 	@GetMapping(value = "/listar")
 	public List<Laudo> listarLaudos() {
