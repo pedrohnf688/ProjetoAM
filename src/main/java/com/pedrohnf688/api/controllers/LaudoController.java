@@ -43,19 +43,22 @@ public class LaudoController {
 
 	@GetMapping
 	public String paginaLaudo() {
-	return "uploadLaudos";
+		return "uploadLaudos";
 	}
 
-	
-	
-	@GetMapping(value = "/listar")
+	@GetMapping(value = "/analises")
+	public String paginaAnalises() {
+		return "/analises";
+	}
+
+	@GetMapping(value = "/listarLaudo")
 	public List<Laudo> listarLaudos() {
 		List<Laudo> laudos = this.laudoService.listarLaudos();
 		return laudos;
 	}
 
 	@PostMapping(value = "/upload", consumes = "multipart/form-data")
-	public void uploadMultipart(@RequestParam("file") MultipartFile file) throws IOException {
+	public String uploadMultipart(@RequestParam("file") MultipartFile file) throws IOException {
 		log.info("Fazendo Upload do Arquivo Csv do Laudo");
 
 		try {
@@ -66,6 +69,7 @@ public class LaudoController {
 			e.printStackTrace();
 		}
 
+		return "redirect:/laudo";
 	}
 
 	@PostMapping

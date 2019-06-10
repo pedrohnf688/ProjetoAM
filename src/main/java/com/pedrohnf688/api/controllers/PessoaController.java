@@ -57,7 +57,7 @@ public class PessoaController {
 		
 		model.addAttribute("Credenciais Invalidas", true);
 
-		return "login";
+		return "redirect:/";
 	}
 
 }
