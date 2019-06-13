@@ -36,14 +36,13 @@ public class PessoaController {
 		Iterable<Pessoa> pessoas = pessoaService.listarPessoas();
 		mv.setViewName("listarUsuarios");
 		mv.addObject("pessoas", pessoas);
-		
 		return mv;
 	}
 
 	@PostMapping
 	public String cadastrar(Pessoa p) {
 		pessoaService.salvar(p);
-		return "redirect:/listarUsuarios";
+		return "redirect:/";
 	}
 
 	@PostMapping("/login")
