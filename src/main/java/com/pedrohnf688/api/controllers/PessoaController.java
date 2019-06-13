@@ -32,9 +32,11 @@ public class PessoaController {
 
 	@GetMapping("/listarUsuarios")
 	public ModelAndView findAll() {
-		ModelAndView mv = new ModelAndView("/listarUsuarios");
+		ModelAndView mv = new ModelAndView();
 		Iterable<Pessoa> pessoas = pessoaService.listarPessoas();
+		mv.setViewName("listarUsuarios");
 		mv.addObject("pessoas", pessoas);
+		
 		return mv;
 	}
 

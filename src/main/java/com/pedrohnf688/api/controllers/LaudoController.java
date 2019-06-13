@@ -22,9 +22,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.pedrohnf688.api.config.Response;
 import com.pedrohnf688.api.modelo.Laudo;
+import com.pedrohnf688.api.modelo.Pessoa;
 import com.pedrohnf688.api.repositorio.LaudoRepositorio;
 import com.pedrohnf688.api.service.LaudoService;
 import com.pedrohnf688.api.utils.CsvUtils;
@@ -47,8 +49,10 @@ public class LaudoController {
 	}
 
 	@GetMapping(value = "/analises")
-	public String paginaAnalises() {
-		return "/analises";
+	public ModelAndView paginaAnalises() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("analises");
+		return mv;
 	}
 
 	@GetMapping(value = "/listarLaudo")
