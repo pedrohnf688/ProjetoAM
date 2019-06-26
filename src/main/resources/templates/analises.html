@@ -137,32 +137,35 @@
 		'packages' : [ 'corechart' ]
 	});
 
-	// Set a callback to run when the Google Visualization API is loaded.
+	// Draw the pie chart and bar chart when Charts is loaded.
 	google.charts.setOnLoadCallback(drawChart);
 
-	// Callback that creates and populates a data table,
-	// instantiates the pie chart, passes in the data and
-	// draws it.
 	function drawChart() {
 
-		// Create the data table.
 		var data = new google.visualization.DataTable();
 		data.addColumn('string', 'Topping');
 		data.addColumn('number', 'Slices');
 		data.addRows([ [ 'Mushrooms', 3 ], [ 'Onions', 1 ], [ 'Olives', 1 ],
 				[ 'Zucchini', 1 ], [ 'Pepperoni', 2 ] ]);
 
-		// Set chart options
-		var options = {
-			'title' : 'How Much Pizza I Ate Last Night',
-			'width' : 400,
-			'height' : 300
+		var piechart_options = {
+			title : 'Pie Chart: How Much Pizza I Ate Last Night',
+			width : 400,
+			height : 300
 		};
+		var piechart = new google.visualization.PieChart(document
+				.getElementById('piechart_div'));
+		piechart.draw(data, piechart_options);
 
-		// Instantiate and draw our chart, passing in some options.
-		var chart = new google.visualization.PieChart(document
-				.getElementById('chart_div'));
-		chart.draw(data, options);
+		var barchart_options = {
+			title : 'Barchart: How Much Pizza I Ate Last Night',
+			width : 400,
+			height : 300,
+			legend : 'none'
+		};
+		var barchart = new google.visualization.BarChart(document
+				.getElementById('barchart_div'));
+		barchart.draw(data, barchart_options);
 	}
 </script>
 </head>
@@ -195,47 +198,59 @@
 		</div>
 	</nav>
 
-<div class="container">
-	<!--Div that will hold the pie chart-->
-	<div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12" align="center">
-		<div id="chart_div"></div>
-	</div>
-	
-	
-	<!-- Botão para acionar modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ExemploModalCentralizado">
-  Recomendações
-</button>
+	<div class="container">
+		<!--Div that will hold the pie chart-->
+		<div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12"
+			align="center">
+			<table class="columns">
+				<tr>
+					<td><div id="piechart_div" style="border: 1px solid #ccc"></div></td>
+					<td><div id="barchart_div" style="border: 1px solid #ccc"></div></td>
+				</tr>
+			</table>
+		</div>
+		
+		<br/>
+		<br/>
 
-<!-- Modal -->
-<div class="modal fade" id="ExemploModalCentralizado" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="TituloModalCentralizado">Recomendações</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <ol>
-          <li>Benfeitorias e local da ordenha</li>
-          <li>Cuidados com a água</li>
-          <li>Ordenhador ou retireiro</li>
-          <li>Ordenha</li>
-          <li>Benfeitoria e resfriamento do leite em tanques coletivos</li>
-          <li>Coleta de amostras para análise de qualidade do leite</li>
-          <li>Higienização do tanque</li>
-          <li>Transporte do leite</li>
-         </ol>	
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-        <button type="button" class="btn btn-primary">Gerar Pdf</button>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
+		<!-- Botão para acionar modal -->
+		<button type="button" class="btn btn-primary" data-toggle="modal"
+			data-target="#ExemploModalCentralizado">Recomendações</button>
+
+		<!-- Modal -->
+		<div class="modal fade" id="ExemploModalCentralizado" tabindex="-1"
+			role="dialog" aria-labelledby="TituloModalCentralizado"
+			aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="TituloModalCentralizado">Recomendações</h5>
+						<button type="button" class="close" data-dismiss="modal"
+							aria-label="Fechar">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<ol>
+							<li>Benfeitorias e local da ordenha</li>
+							<li>Cuidados com a água</li>
+							<li>Ordenhador ou retireiro</li>
+							<li>Ordenha</li>
+							<li>Benfeitoria e resfriamento do leite em tanques coletivos</li>
+							<li>Coleta de amostras para análise de qualidade do leite</li>
+							<li>Higienização do tanque</li>
+							<li>Transporte do leite</li>
+						</ol>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary"
+							data-dismiss="modal">Fechar</button>
+							<button type="button" class="btn btn-primary">Detalhar</button>
+						<button type="button" class="btn btn-primary">Gerar Pdf</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
