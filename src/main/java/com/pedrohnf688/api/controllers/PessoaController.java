@@ -30,7 +30,8 @@ public class PessoaController {
 		return "login";
 	}
 
-	@GetMapping("/listarUsuarios")
+
+    @GetMapping("/listarUsuarios")
 	public ModelAndView findAll() {
 		ModelAndView mv = new ModelAndView();
 		Iterable<Pessoa> pessoas = pessoaService.listarPessoas();
@@ -38,6 +39,8 @@ public class PessoaController {
 		mv.addObject("pessoas", pessoas);
 		return mv;
 	}
+	
+	
 
 	@PostMapping
 	public String cadastrar(Pessoa p) {
@@ -55,7 +58,7 @@ public class PessoaController {
 		if (p.isPresent()) {
 			return "redirect:/listarUsuarios";
 		}
-		
+
 		model.addAttribute("Credenciais Invalidas", true);
 
 		return "redirect:/";

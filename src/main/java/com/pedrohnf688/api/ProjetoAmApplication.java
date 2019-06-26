@@ -16,8 +16,7 @@ public class ProjetoAmApplication {
 
 	@Autowired
 	private PessoaRepositorio pessoaRepositorio;
-	
-	
+
 	public static void main(String[] args) {
 		SpringApplication.run(ProjetoAmApplication.class, args);
 	}
@@ -34,4 +33,5 @@ public class ProjetoAmApplication {
 //						
 //		};
 //	}
+
 }

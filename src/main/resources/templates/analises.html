@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8" />
 <!--Load the AJAX API-->
 <script type="text/javascript"
 	src="https://www.gstatic.com/charts/loader.js"></script>
@@ -169,7 +170,7 @@
 
 	<nav
 		class="navbar navbar-icon-top navbar-expand-lg navbar-dark bg-dark">
-		<a class="navbar-brand" href="#">Navbar</a>
+		<a class="navbar-brand" href="/laudo">Sistema de Analises</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
 			data-target="#navbarSupportedContent"
 			aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -179,39 +180,62 @@
 
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto">
-				<li class="nav-item active"><a class="nav-link" href="#"> <i
-						class="fa fa-home"></i> Inicio <span class="sr-only">(current)</span>
+				<li class="nav-item active"><a class="nav-link" href="/laudo"></i>
+						Inicio </a></li>
+				<li class="nav-item"><a class="nav-link" href="/listarUsuarios">
+						Listar Usuarios </a></li>
+				<li class="nav-item"><a class="nav-link" href="/laudo">
+						Listar Laudos </a></li>
+				<li class="nav-item"><a class="nav-link" href="/laudo/analises">
+						Analises <span class="sr-only">(current)</span>
 				</a></li>
-				<li class="nav-item"><a class="nav-link" href="#"> <i
-						class="fa fa-envelope-o"> <span class="badge badge-danger">11</span>
-					</i> Link
-				</a></li>
-				<li class="nav-item"><a class="nav-link disabled" href="#">
-						<i class="fa fa-envelope-o"> <span class="badge badge-warning">11</span>
-					</i> Disabled
-				</a></li>
-				<li class="nav-item dropdown"><a
-					class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-					role="button" data-toggle="dropdown" aria-haspopup="true"
-					aria-expanded="false"> <i class="fa fa-envelope-o"> <span
-							class="badge badge-primary">11</span>
-					</i> Dropdown
-				</a>
-					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" href="#">Action</a> <a
-							class="dropdown-item" href="#">Another action</a>
-						<div class="dropdown-divider"></div>
-						<a class="dropdown-item" href="#">Something else here</a>
-					</div></li>
+
 			</ul>
 
 		</div>
 	</nav>
 
+<div class="container">
 	<!--Div that will hold the pie chart-->
 	<div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12" align="center">
 		<div id="chart_div"></div>
 	</div>
+	
+	
+	<!-- Botão para acionar modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ExemploModalCentralizado">
+  Recomendações
+</button>
 
+<!-- Modal -->
+<div class="modal fade" id="ExemploModalCentralizado" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="TituloModalCentralizado">Recomendações</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <ol>
+          <li>Benfeitorias e local da ordenha</li>
+          <li>Cuidados com a água</li>
+          <li>Ordenhador ou retireiro</li>
+          <li>Ordenha</li>
+          <li>Benfeitoria e resfriamento do leite em tanques coletivos</li>
+          <li>Coleta de amostras para análise de qualidade do leite</li>
+          <li>Higienização do tanque</li>
+          <li>Transporte do leite</li>
+         </ol>	
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-primary">Gerar Pdf</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
 </body>
 </html>

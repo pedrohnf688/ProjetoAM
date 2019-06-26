@@ -56,9 +56,12 @@ public class LaudoController {
 	}
 
 	@GetMapping(value = "/listarLaudo")
-	public List<Laudo> listarLaudos() {
-		List<Laudo> laudos = this.laudoService.listarLaudos();
-		return laudos;
+	public ModelAndView listarLaudos() {
+		ModelAndView mv = new ModelAndView();
+		Iterable<Laudo> laudos = this.laudoService.listarLaudos();
+		mv.setViewName("listarLaudo");
+		mv.addObject("listarlaudos", laudos);
+		return mv;
 	}
 
 	@PostMapping(value = "/upload", consumes = "multipart/form-data")
