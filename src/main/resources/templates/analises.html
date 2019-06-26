@@ -145,11 +145,11 @@
 		var data = new google.visualization.DataTable();
 		data.addColumn('string', 'Topping');
 		data.addColumn('number', 'Slices');
-		data.addRows([ [ 'Mushrooms', 3 ], [ 'Onions', 1 ], [ 'Olives', 1 ],
-				[ 'Zucchini', 1 ], [ 'Pepperoni', 2 ] ]);
+		data.addRows([ [ 'Gord', 3 ], [ 'Prot', 1 ], [ 'Fat', 1 ],
+				[ 'Ccs', 1 ], [ 'Casein', 2 ] ]);
 
 		var piechart_options = {
-			title : 'Pie Chart: How Much Pizza I Ate Last Night',
+			title : 'Pie Chart: Resultado da analise de dados do laudo',
 			width : 400,
 			height : 300
 		};
@@ -158,7 +158,7 @@
 		piechart.draw(data, piechart_options);
 
 		var barchart_options = {
-			title : 'Barchart: How Much Pizza I Ate Last Night',
+			title : 'Barchart: Resultado da analise de dados do laudo',
 			width : 400,
 			height : 300,
 			legend : 'none'
